@@ -186,6 +186,42 @@ CalTrack follows modern web design principles:
 
 ---
 
+## 🚀 Deployment
+
+CalTrack can be deployed automatically to Vercel whenever code is pushed to the `main` branch.
+
+This project is a static site, so Vercel can serve it directly from the repository root. The included `vercel.json` keeps the deployment clean and URL-friendly.
+
+### What is automated
+- GitHub stores your source code and version history
+- A GitHub Actions workflow runs on every push to `main`
+- Vercel receives the latest version and publishes the site
+
+### One-time setup required on Vercel
+1. Create or open your project in Vercel
+2. Link the GitHub repository `Tharunkumarpogula/CalTrack`
+3. Add these repository secrets in GitHub:
+   - `VERCEL_TOKEN`
+   - `VERCEL_ORG_ID`
+   - `VERCEL_PROJECT_ID`
+
+### After setup
+- Make changes locally
+- Commit and push to `main`
+- GitHub Actions deploys the update to Vercel automatically
+
+### Optional local auto-sync
+
+If you want your local edits to be pushed to GitHub automatically while you work, run the helper script in this repo:
+
+```powershell
+.\scripts\auto-sync.ps1
+```
+
+The script watches the project, commits detected changes with a timestamp, and pushes them to `main`. Keep the terminal open while you work.
+
+---
+
 ## 🤝 Support & Contact
 
 For questions, feedback, or suggestions about CalTrack:
